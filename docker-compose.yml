@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+    mongo:
+        image: 'mongo'
+        environment:
+         - MONGO_INITDB_DATABASE=dev_corona
+         - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+         - MONGO_INITDB_ROOT_PASSWORD=mongoadmin
+        ports:
+         - 27017:27017
+        volumes:
+         - mongodata:/data/db
+        restart: always
+volumes:
+    mongodata:
